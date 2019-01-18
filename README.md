@@ -50,33 +50,7 @@ Perintah EXPOSE digunakan untuk menghubungkan port tertentu untuk mengaktifkan n
 2. Kemudian kita tambahkan konfigurasi docker yang didalamnya terdapat perintah dan argument untuk membuat container Nginx web server. 
    Base image yang digunakan adalah ubuntu. 
    Konfigurasinya adalah seperti di bawah ini :
-       # Pull base image.
-    FROM ubuntu:14.04
-
-    RUN apt-get install -y –no-install-recommends software-properties-common
-
-    # Install Nginx.
-    RUN \
-    add-apt-repository -y ppa:nginx/stable && \
-    apt-get update && \
-    apt-get install -y nginx && \
-    rm -rf /var/lib/apt/lists/* && \
-    echo “\ndaemon off;” >> /etc/nginx/nginx.conf && \
-    chown -R www-data:www-data /var/lib/nginx
-
-    # Define mountable directories.
-    VOLUME [“/etc/nginx/sites-enabled”, “/etc/nginx/certs”, “/etc/nginx/conf.d”, “/var/log/nginx”, “/var/www/html”]
-
-    # Define working directory.
-    WORKDIR /etc/nginx
-
-    # Define default command.
-    CMD [“nginx”]
-
-    # Expose ports.
-    EXPOSE 80
-    EXPOSE 443
-	
+      ![w]((https://github.com/ayuwidyainggit/ujian-tct/blob/master/images/w.png))
 3. build image nya dengan menggunakan dockerfile diatas, untuk mulai membuild jalankan perintah berikut :
     docker build -t nginx_webserver .
 	![2.1](https://github.com/ayuwidyainggit/ujian-tct/blob/master/images/2.1.png)
