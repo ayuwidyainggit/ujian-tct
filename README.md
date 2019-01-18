@@ -79,28 +79,28 @@ Perintah EXPOSE digunakan untuk menghubungkan port tertentu untuk mengaktifkan n
 	
 3. build image nya dengan menggunakan dockerfile diatas, untuk mulai membuild jalankan perintah berikut :
     docker build -t nginx_webserver .
-	![2.1]()
+	![2.1](https://github.com/ayuwidyainggit/ujian-tct/blob/master/images/2.1.png)
 	
 4. cek hasilnya dengan perintah :
     docker images
-	![2.2]()
+	![2.2](https://github.com/ayuwidyainggit/ujian-tct/blob/master/images/2.2.png)
 	disitu terlihat dengan image ID 5d62ac5f7514
 	
 5. Membuat sebuah Docker Container
 Dengan menggunakan image ubuntu yang kita build, kita akan membuat sebuah container yang berjalan didalam 
 instance web server Nginx. Jalankan perintah berikut :
      docker run –name nginx_webserver_instance -p 80:80 -d nginx_webserver
-	![2.3]()
+	![2.3](https://github.com/ayuwidyainggit/ujian-tct/blob/master/images/2.3.png)
 Gambar di atas kita telah berhasil membuat container Nginx dan memforwardnya ke port 80. 
 Untuk mengeceknya gunakan perintah di bawah ini :
       docker ps -a
-	 ![2.4]() 
+	 ![2.4](https://github.com/ayuwidyainggit/ujian-tct/blob/master/images/2.4.png) 
 Untuk menjalankan perintah curl ke localhost adalah dengan perintah :
      curl localhost
-	  ![2.5]() 
+	  ![2.5](https://github.com/ayuwidyainggit/ujian-tct/blob/master/images/2.5.png) 
 container Nginx  web server telah berjalan base image ubuntu, atau coba buka browser, buka alamat ip kita
 untuk menjalankannya buka browser dengan alamat ip kita :
-      ![2.6]() 
+      ![2.6](https://github.com/ayuwidyainggit/ujian-tct/blob/master/images/2.6.png) 
 cara menghentikan container yang sedang berjalan :
       docker stop <container id> 
 	  
